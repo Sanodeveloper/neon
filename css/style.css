@@ -1,0 +1,319 @@
+/* Start Part */
+
+.bg-img {
+    height: 100vh;
+    background-image: url("../img/_c2968917-7f2e-4d53-b1e3-ceb7e0288e11.png");
+    background-size: cover;
+    background-position-y: 80%;
+}
+
+.bg-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000;
+    animation: fadeout 2s 3s forwards;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .2;
+    }
+}
+
+.neon-borad {
+    font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+    min-width: 600px;
+    background-color: #000;
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 100px;
+    border: 10px solid #fff;
+    border-radius: 10px;
+    font-size: 7rem;
+    color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke:  5px #fff;
+    animation: neonsentence 2s infinite alternate, neonframe 2s infinite alternate, totop 3s forwards;
+    z-index: 1;
+}
+
+@keyframes neonsentence {
+    0%, 19%, 21%, 79%, 81%, 100% {
+        text-shadow: 0 0 26px #f00,
+                     0 0 37px #f00,
+                     0 0 47px #f00,
+                     0 0 80px #f00
+                     ;
+    }
+
+    20%, 80% {
+        text-shadow: none;
+    }
+}
+
+@keyframes neonframe {
+    0%, 6%, 8%, 100% {
+        box-shadow: 0 0 5px #AFDFE4,
+                    0 0 5px #AFDFE4 inset,
+                    0 0 10px #AFDFE4,
+                    0 0 10px #AFDFE4 inset,
+                    0 0 25px #AFDFE4,
+                    0 0 25px #AFDFE4 inset
+        ;
+    }
+
+    7% {
+        box-shadow: none;
+    }
+}
+
+@keyframes totop {
+    0%, 35% {
+        padding: 150px 150px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        padding: 10px 100px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        padding: 10px 100px;
+        top: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+.logo {
+    max-width: 100%;
+    text-align: center;
+}
+
+.side-nav {
+    position: fixed;
+    width: 15%;
+    height: 100vh;
+    background-color: rgba(5, 10, 48, 1);
+    top: 0;
+    padding-top: 40px;
+    animation: fadein 1s 3s backwards;
+    z-index: 2;
+}
+
+.side-nav ul {
+    margin-top: 50px;
+}
+
+.side-nav li {
+    position: relative;
+}
+
+.side-nav li::before {
+    content: '';
+    background-color: #fffffff4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -30px;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform .5s;
+    z-index: 0;
+}
+
+.side-nav li:hover::before {
+    transform: translateX(0%);
+}
+
+.side-nav li a{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: #fff;
+    border-top: 1px solid #EEE;
+    padding: 30px 20px;
+    z-index: 1;
+}
+
+.side-nav li:last-child a {
+    border-bottom: 1px solid #EEE;
+}
+
+
+.side-nav li a:hover {
+    color: #000;
+}
+
+.side-nav li .active {
+    position: relative;
+    background-color: #fff;
+    color: #000;
+}
+
+.side-nav li .active::after {
+    font: var(--fa-font-solid);
+    content: '\f0da';
+    color: #000;
+    font-size: 1.5rem;
+}
+
+
+/* Tab */
+
+.tab.active {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 85%;
+    min-height: 100%;
+    animation: fadein 1.2s;
+    z-index: 1;
+}
+
+@keyframes fadein {
+    from {
+        transform: translate(-100%);
+    }
+
+    to {
+        transform: translate(0%);
+    }
+}
+
+.tab {
+    padding: 50px 150px;
+    color: #333;
+    background-color: #ffffff;
+    display: none;
+}
+
+.tab > h2 {
+    font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+    border-left: 10px solid rgba(5, 10, 48, 1);
+    font-size: 3rem;
+    margin-bottom: 50px;
+    padding: 25px 30px;
+}
+
+.tab_En {
+    font-weight: lighter;
+    margin-left: 15px;
+    font-size: 1.5rem;
+}
+
+
+/*product*/
+
+.product_item {
+    display: flex;
+    margin-bottom: 150px;
+}
+
+.product_item:nth-child(2n+1) {
+    flex-direction: row-reverse;
+}
+
+.product_item img {
+    width: 40%;
+}
+
+.product_inner {
+    width: 60%;
+    padding: 0 50px;
+}
+
+.product_title {
+    background-color: rgba(5, 10, 48, 1);
+    color: #ffff;
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.product_desc_flex {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product_price {
+    font-size: 2rem;
+    color: #f00;
+}
+
+.product_com_flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    border: 3px solid;
+    border-image: linear-gradient( 45deg, rgba(5, 10, 48, 1), rgb(53, 14, 231)) 1;
+    background: linear-gradient( 45deg, rgba(5, 10, 48, 1), rgb(53, 14, 231));
+    color: #fff;
+    padding: 10px 25px;
+    transition: all .5s;
+}
+
+.btn:hover {
+   background-image: none;
+   color: #000;
+}
+
+
+/*about*/
+.about {
+    display: flex;
+}
+
+.about iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.about_map {
+    width: 50%;
+    aspect-ratio: 1;
+}
+
+.about_desc {
+    width: 50%;
+    padding: 20px 40px;
+}
+
+.about_desc li {
+    border-bottom: 1px solid #000;
+    padding: 30px 5px;
+}
+
+.about_desc li:nth-child(1) {
+    border-top: 1px solid #000;
+}
+
+.about_t {
+    display: inline-block;
+    width: 50%;
+}
+
+.about_d {
+    display: inline-block;
+    width: 50%;
+}
